@@ -30,3 +30,5 @@ replay_pid*
 # Input files
 java/resources/*
 out
+*input.txt
+*test.txt
