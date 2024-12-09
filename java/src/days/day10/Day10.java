@@ -15,7 +15,8 @@ public class Day10 {
     }
 
     public static void main(String... args) {
-        var fileContent = Util.getFileContent(10);
+//        var fileContent = Util.getFileContent(10);
+        var fileContent = Util.getTestFileContent(10);
         System.out.println(part1(fileContent));
         System.out.println(part2(fileContent));
     }
