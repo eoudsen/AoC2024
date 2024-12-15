@@ -13,4 +13,8 @@ public record Coordinate(long x, long y) {
         neighbours.add(new Coordinate(x, y + 1));
         return neighbours;
     }
+
+    public Coordinate relative(final Direction dir) {
+        return new Coordinate(this.x + dir.x(), this.y + dir.y());
+    }
 }

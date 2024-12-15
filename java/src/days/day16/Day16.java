@@ -15,7 +15,8 @@ public class Day16 {
     }
 
     public static void main(String... args) {
-        var fileContent = Util.getFileContent(16);
+//        var fileContent = Util.getFileContent(16);
+        var fileContent = Util.getTestFileContent(16);
         System.out.println(part1(fileContent));
         System.out.println(part2(fileContent));
     }
