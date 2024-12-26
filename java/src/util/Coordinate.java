@@ -2,6 +2,7 @@ package util;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 public record Coordinate(long x, long y) implements Comparable<Coordinate> {
 
@@ -11,6 +12,17 @@ public record Coordinate(long x, long y) implements Comparable<Coordinate> {
         neighbours.add(new Coordinate(x + 1, y));
         neighbours.add(new Coordinate(x, y - 1));
         neighbours.add(new Coordinate(x, y + 1));
+        return neighbours;
+    }
+
+    public Set<Coordinate> getNeighbours(int cheatDistance) {
+        Set<Coordinate> neighbours = new TreeSet<>();
+        for (int i = 0; i < cheatDistance; i++) {
+            neighbours.add(new Coordinate(x + i, y - cheatDistance + i));
+            neighbours.add(new Coordinate(x + cheatDistance - i, y + i));
+            neighbours.add(new Coordinate(x - i, y + cheatDistance - i));
+            neighbours.add(new Coordinate(x - cheatDistance + i, y - i));
+        }
         return neighbours;
     }
 
